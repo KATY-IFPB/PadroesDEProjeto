@@ -91,7 +91,7 @@ public class Display {
             // 6. Salvar a imagem editada em JPG
             ImageIO.write(imagem, "jpg", new File("saida/leitura_do_hidrometro.jpg"));
 
-            System.out.println("Imagem editada com sucesso! " + numeroDisplay);
+           // System.out.println("Imagem editada com sucesso! " + numeroDisplay);
         } catch (Exception e) {
             e.printStackTrace();
         }
