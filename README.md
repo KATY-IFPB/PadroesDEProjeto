@@ -7,6 +7,6 @@ A classe responsável por iniciar a execução do projeto está localizada no pa
 
 === Diagrama de Classes === 
 
-     O diagrama de classes foi criado em um programa online cujo link é: 
+     O diagrama de classes foi criado em um programa online cujo link é: https://www.planttext.com/
 Para saber mais informações de como o diagrama de Classes foi criado consultar o arquivo "CodigoDiagramaDEClasses"
 
