@@ -5,5 +5,5 @@ O projeto foi criado na IDE Eclipse com a linguagem de programação Java. A cla
 
 === Diagrama de Classes === 
 
-O diagrama de classes foi criado em um programa online 
+O diagrama de classes foi criado em um programa online cujo link é: 
 
