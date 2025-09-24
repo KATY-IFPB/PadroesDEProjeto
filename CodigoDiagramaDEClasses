@@ -1,0 +1,75 @@
+=== Código para criação do Diagrama de Classes === 
+
+
+Copiar o código abaixo no link https://www.planttext.com/ e gerar o diagrama
+
+
+
+@startuml
+
+class HidrometroController {
+    - static hidrometroInicializado : boolean
+    - static hidrometro : Hidrometro
+    - static comando : int
+    - static final SYSTEM_INIT : int
+    - static final SET_LARGURA_CANO_ENTRADA : int
+    - static final SET_LARGURA_CANO_SAIDA : int
+    - static final SET_REGULAGEM_DA_TORNEIRA : int
+    - static final SET_VELOCIDADE_DA_AGUA : int
+    - static final VER_MEDICAO_DO_HIDROMETRO : int
+    --
+    + main(args : String[]) : void
+}
+
+class Hidrometro implements Runnable {
+    - volumeMaximo : double
+    - volumeAcumulado : double
+    - larguraCanoEntrada : double
+    - larguraCanoSaida : double
+    - torneiraRegulagem : int
+    - velocidadeAguaEntrada : double
+    - display : Display
+    --
+    + Hidrometro(torneiraRegulagem : int, larguraCanoEntrada : double, larguraCanoSaida : double, velocidadeAguaEntrada : double)
+    - calcularArea() : double
+    - calcularVazao() : double
+    + registrarConsumo(tempoSegundos : double) : void
+    + getVolumeMaximo() : double
+    + setVolumeMaximo(volumeMaximo : double) : void
+    + getVolumeAcumulado() : double
+    + setVolumeAcumulado(volumeAcumulado : double) : void
+    + getLarguraCanoEntrada() : double
+    + setLarguraCanoEntrada(larguraCanoEntrada : double) : void
+    + getLarguraCanoSaida() : double
+    + setLarguraCanoSaida(larguraCanoSaida : double) : void
+    + getTorneiraRegulagem() : int
+    + setTorneiraRegulagem(torneiraRegulagem : int) : void
+    + getVelocidadeAguaEntrada() : double
+    + setVelocidadeAguaEntrada(velocidadeAguaEntrada : double) : void
+    + run() : void
+}
+
+class Display {
+    - numeroDisplay : int
+    --
+    + Display(numeroDisplay : int)
+    + getNumeroDisplay() : int
+    + setNumeroDisplay(numeroDisplay : int) : void
+    + gerarImagem() : void
+}
+
+class Messages {
+    - static final BUNDLE_NAME : String
+    - static final RESOURCE_BUNDLE : ResourceBundle
+    - Messages()
+    --
+    + static getString(key : String) : String
+}
+
+' ======= RELACIONAMENTOS =======
+HidrometroController --> Hidrometro : cria / controla
+Hidrometro --> Display : usa
+HidrometroController --> Messages : usa
+Messages --> ResourceBundle : utiliza
+
+@enduml
