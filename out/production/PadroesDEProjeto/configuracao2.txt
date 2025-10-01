@@ -1,0 +1,13 @@
+Largura do cano de entrada (em mm)
+32
+Largura do cano de saida (em mm)
+28
+Regulagem da torneira (0 a 100)
+70
+Velocidade da entrada de agua (em  m³/s)
+0.55
+Endereço da imagem do hidrometro sem edição
+/resources/hidrometro.jpg
+Endereço da leitura do hidrometro
+/resources/saida/hidrometro.jpg
+
