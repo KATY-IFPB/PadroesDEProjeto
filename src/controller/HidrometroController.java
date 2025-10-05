@@ -8,11 +8,11 @@ import view.Messages;
 
 /**
  * Controlador principal do Hidrometro.
- * 
+ *
  * Esta classe gerencia a inicialização e o controle de um objeto Hidrometro,
  * fornecendo um menu interativo via console para manipular atributos do hidrometro
  * como largura do cano, regulagem da torneira, velocidade da água e visualização da medição.
- * 
+ *
  * Utiliza a classe {@link Hidrometro} do pacote model para representar o hidrometro real.
  */
 public class HidrometroController {
@@ -36,10 +36,10 @@ public class HidrometroController {
 
 	/**
 	 * Método principal que inicia a aplicação.
-	 * 
+	 *
 	 * Cria um menu de interação via console para manipular o hidrometro.
 	 * Recebe entradas do usuário e executa os comandos correspondentes.
-	 * 
+	 *
 	 * Comandos disponíveis:
 	 * <ul>
 	 *   <li>0 - Inicializar hidrometro</li>
@@ -49,7 +49,7 @@ public class HidrometroController {
 	 *   <li>4 - Definir velocidade da água</li>
 	 *   <li>5 - Ver medição atual do hidrometro</li>
 	 * </ul>
-	 * 
+	 *
 	 * @param args argumentos da linha de comando (não utilizados)
 	 */
 	public static void main(String[] args) {
