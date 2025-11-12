@@ -7,11 +7,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import model.Hidrometro;
-import view.Messages;
 
 /**
  * Orquestradora multithread para gerenciar até 5 simuladores de hidrômetro concorrentes.
- *
  * Esta classe mantém o código original "puro" e adiciona capacidade multithread,
  * permitindo que múltiplos simuladores executem independentemente com comportamentos
  * de entrada, medição e saída completamente diferentes.
@@ -327,14 +325,12 @@ public class Orquestradora {
         }
 
         System.out.println("\n=== SIMULADORES ATIVOS ===");
-        simuladores.forEach((id, hidrometro) -> {
-            System.out.printf("ID: %d | Volume: %d m³ | Regulagem: %d%% | Status: %s%n",
+        simuladores.forEach((id, hidrometro) -> System.out.printf("ID: %d | Volume: %d m³ | Regulagem: %d%% | Status: %s%n",
                 id,
                 (int) hidrometro.getVolumeAcumulado(),
                 hidrometro.getTorneiraRegulagem(),
                 threads.get(id).isAlive() ? "Ativo" : "Parado"
-            );
-        });
+            ));
     }
 
     /**
@@ -392,3 +388,4 @@ public class Orquestradora {
         System.out.println("Todos os simuladores foram encerrados.");
     }
 }
+

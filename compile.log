@@ -1,0 +1,14 @@
+src/controller/FachadaSHA.java:66: error: unreported exception Exception; must be caught or declared to be thrown
+        int id = allocateId();
+                           ^
+src/controller/HidrometroController.java:79: warning: [removal] Double(String) in Double has been deprecated and marked for removal
+						double larguraCanoSaida = new Double(scanner.nextLine());
+						                          ^
+src/controller/HidrometroController.java:81: warning: [removal] Integer(String) in Integer has been deprecated and marked for removal
+						int regulagemDaTorneira = new Integer(scanner.nextLine());
+						                          ^
+src/controller/HidrometroController.java:83: warning: [removal] Double(String) in Double has been deprecated and marked for removal
+						double velocidadeDaAgua = new Double(scanner.nextLine());
+						                          ^
+1 error
+3 warnings
