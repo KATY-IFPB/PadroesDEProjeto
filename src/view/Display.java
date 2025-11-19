@@ -22,14 +22,28 @@ public class Display {
 	/** Valor que será exibido no display (leitura do hidrômetro). */
 	private int numeroDisplay;
 
+	/** ID do simulador para gerar arquivos de saída únicos */
+	private int simuladorId;
+
 	/**
 	 * Construtor da classe Display.
 	 *
 	 * @param numeroDisplay valor inicial a ser exibido no display
 	 */
 	public Display(int numeroDisplay) {
+		this(numeroDisplay, 1); // Compatibilidade com código original
+	}
+
+	/**
+	 * Construtor da classe Display com ID do simulador.
+	 *
+	 * @param numeroDisplay valor inicial a ser exibido no display
+	 * @param simuladorId ID do simulador (1-5)
+	 */
+	public Display(int numeroDisplay, int simuladorId) {
 		super();
 		this.numeroDisplay = numeroDisplay;
+		this.simuladorId = simuladorId;
 	}
 	
 	/**
@@ -61,7 +75,7 @@ public class Display {
 	 *   <li>Formata o número do display para 8 dígitos, adicionando zeros à esquerda.</li>
 	 *   <li>Insere espaços entre os dígitos para simular melhor a leitura.</li>
 	 *   <li>Desenha o texto na posição (290, 180) da imagem.</li>
-	 *   <li>Salva o resultado em "saida/leitura_do_hidrometro.jpg".</li>
+	 *   <li>Salva o resultado em "saida/leitura_do_hidrometro_[id].jpg".</li>
 	 * </ol>
 	 *
 	 * Em caso de erro, a exceção será exibida no console.
@@ -88,8 +102,11 @@ public class Display {
             // Finalizar edição
             g2d.dispose();
 
-            // 6. Salvar a imagem editada em JPG
-            ImageIO.write(imagem, "jpg", new File("saida/leitura_do_hidrometro.jpg"));
+            // 6. Salvar a imagem editada em JPG com ID único
+            String nomeArquivo = (simuladorId == 1) ?
+                "saida/leitura_do_hidrometro.jpg" :  // Compatibilidade com original
+                "saida/leitura_do_hidrometro_" + simuladorId + ".jpg";
+            ImageIO.write(imagem, "jpg", new File(nomeArquivo));
 
            // System.out.println("Imagem editada com sucesso! " + numeroDisplay);
         } catch (Exception e) {
